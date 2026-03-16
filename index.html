@@ -20,7 +20,34 @@
 <style>
 /* Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #530045; text-align:center; line-height:1.5; background: linear-gradient(160deg, #f9f5ff, #f3ebff, #ede1ff); background-size: 400% 400%; animation: gradientMove 15s ease infinite; }
+
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #530045;
+  text-align: center;
+  line-height: 1.5;
+
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 a { text-decoration: none; color: inherit; }
 .container { max-width:900px; margin:auto; padding:40px 20px; position:relative; z-index:1; }
 
@@ -38,9 +65,7 @@ a { text-decoration: none; color: inherit; }
 .hero-button { display:inline-block; background:#f6d7f7; color:#C77DFF; padding:14px 24px; border-radius:12px; font-weight:600; margin-top:10px; transition:0.2s; }
 .hero-button:hover { background:#530045; cursor:pointer; transform: translateY(-2px); }
 
-/* Egg Animation */
-.egg { display:inline-block; font-size:3rem; animation: bounce 2s infinite; transform-origin: bottom center; transition: transform 0.3s; margin-right:8px; position:relative; }
-.hero:hover .egg { animation: crack 1.5s forwards; }
+
 
 /* Bounce keyframes */
 @keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
@@ -105,13 +130,6 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
 
 .link {margin-top:10px; font-size:0.9rem;}
 .link:hover {transform: scale(1.2);}
-
-body {
-background-image: url('background.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
 
 </style>
 </head>
@@ -234,23 +252,6 @@ for(let i=0;i<sparkleCount;i++){
   s.style.setProperty('--x-move', (Math.random()*40-20)+'px');
   container.appendChild(s);
 }
-
-// Egg sparkle burst
-const egg = document.querySelector('.egg');
-egg.addEventListener('mouseenter', () => {
-  for(let i=0;i<10;i++){
-    const b = document.createElement('div');
-    b.classList.add('burst');
-    b.style.left = egg.offsetLeft + egg.offsetWidth/2 + 'px';
-    b.style.top = egg.offsetTop + egg.offsetHeight/2 + 'px';
-    const angle = Math.random()*Math.PI*2;
-    const radius = 50 + Math.random()*30;
-    b.style.setProperty('--x', Math.cos(angle)*radius+'px');
-    b.style.setProperty('--y', Math.sin(angle)*radius+'px');
-    container.appendChild(b);
-    setTimeout(()=>b.remove(),1000);
-  }
-});
 </script>
 
 </body>
