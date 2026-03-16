@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hatchi – Fertility Tracker</title>
+<link rel="icon" type="image/x-icon" href="hatchi.ico">
 
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -27,7 +28,7 @@ a { text-decoration: none; color: inherit; }
 @keyframes sparkleMove { 0%{transform:translateY(0) translateX(0) scale(1);opacity:0.8;}50%{opacity:0.5;}100%{transform:translateY(-120vh) translateX(var(--x-move,0px)) scale(0.5);opacity:0;} }
 
 /* Hero Section */
-.hero h1 { font-size:3rem; margin-bottom:10px; position:relative; z-index:2; }
+.hero h1 { font-size:3rem; margin-bottom:10px; position:relative; z-index:2; text-align:center }
 .tagline { font-size:1.2rem; color:#530045; margin-bottom:20px; }
 .hero-button { display:inline-block; background:#f6d7f7; color:#C77DFF; padding:14px 24px; border-radius:12px; font-weight:600; margin-top:10px; transition:0.2s; }
 .hero-button:hover { background:#530045; cursor:pointer; transform: translateY(-2px); }
@@ -47,8 +48,8 @@ a { text-decoration: none; color: inherit; }
 @keyframes burstAnim { 0%{opacity:1; transform:translate(0,0) scale(1);}100%{opacity:0; transform:translate(var(--x,0px),var(--y,0px)) scale(0.5);} }
 
 /* Features */
-.features { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:50px; }
-.feature { background:#fbfbfc; padding:20px; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.05); transition:0.3s; }
+.features { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:50px; opacity: 0.7;}
+.feature { background:#fbfbfc; transparent:50%; padding:20px; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.05); transition:0.3s; }
 .feature:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
 .feature h3 { margin-bottom:10px; font-size:1.2rem; }
 .feature p { font-size:0.95rem; color:#530045; }
@@ -64,8 +65,12 @@ a { text-decoration: none; color: inherit; }
 */
 
 /* Founder Section */
-.founder { background:#fbfbfc; padding:40px 20px; border-radius:16px; margin-top:60px; }
+.founder { background:#fbfbfc; padding:40px 20px; border-radius:16px; margin-top:60px; opacity: 0.7; }
 .founder p { max-width:700px; margin:auto; color:#530045; font-size:1rem; line-height:1.6; }
+
+/* Contact Section */
+.contact { background:#fbfbfc; padding:40px 20px; border-radius:16px; margin-top:60px; opacity: 0.9; }
+.contact p { max-width:700px; margin:auto; color:#530045; font-size:1rem; line-height:1.6; }
 
 /* Form */
 form { margin-top:40px; display:flex; flex-direction:column; gap:12px; align-items:center; }
@@ -96,6 +101,13 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
 .link {margin-top:10px; font-size:0.9rem;}
 .link:hover {transform: scale(1.2);}
 
+body {
+background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 </style>
 </head>
 
@@ -108,7 +120,8 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
 
   <!-- Hero -->
   <div class="hero">
-    <h1><span class="egg">🥚</span> Hatchi</h1>
+    <!-- <span class="egg">🐣</span> <h1>Hatchi</h1> -->
+	<img style="width: 30%; height:30%;" src="Hatchi Logo-chicken.PNG"/>
     <p class="tagline">A cute and supportive fertility tracker for IVF and treatment journeys.</p>
     <p>Hatchi is hatching soon!</p>
     <a class="hero-button" href="http://eepurl.com/jBKmeM" target="_blank">Join the Waitlist</a>
@@ -163,6 +176,7 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
   </br>
 
   <!-- Mailing List / Contact Form -->
+  <div class="contact">
   <h2>Get In Touch! 🐣</h2>
   <p>Feel free to contact me with any questions or feedback, I will be looking for android testers soon!</p>
 
@@ -176,6 +190,7 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
 <a target="_blank"href="https://www.instagram.com/hatchi.app" class="fab fa-instagram" ></a>
 <a target="_blank" href="https://www.tiktok.com/@hatchi.app" class="fab fa-tiktok"></a>
 <a target="_blank" href="mailto:willowlightapp@gmail.com" class="fa-regular fa-envelope"></a>
+</div>
 </div>
 
   <p class="link">
