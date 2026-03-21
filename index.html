@@ -6,33 +6,33 @@
 <title>Hatchi – Fertility Tracker for IVF & Treatment Journeys</title>
 
 <meta name="description" content="Hatchi is a cute and supportive fertility tracker designed for IVF and treatment journeys. Track medications, blood results and cycles in one place." />
-
 <meta name="keywords" content="fertility tracker, IVF tracker, fertility app, IVF medication tracker, fertility journey app" />
 
-<link rel="icon" type="image/x-icon" href="hatchi.ico">
-
-<!-- Google Fonts -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome 6 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
-/* Reset & Base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 
 body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: #530045;
   text-align: center;
   line-height: 1.5;
-
-  background-image: url('background.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  min-height: 100vh;
+  background: linear-gradient(to right, #e9ddf7, #c5a8e6);
   background-attachment: fixed;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .fade-in {
@@ -48,117 +48,358 @@ body {
   }
 }
 
-a { text-decoration: none; color: inherit; }
-.container { max-width:900px; margin:auto; padding:40px 20px; position:relative; z-index:1; }
+.sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
 
-/* Animate gradient */
-@keyframes gradientMove { 0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;} }
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: sparkleMove linear infinite;
+}
 
-/* Sparkles container and sparkles */
-.sparkles { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:0; }
-.sparkle { position: absolute; width:6px; height:6px; background:white; border-radius:50%; opacity:0.8; animation: sparkleMove linear infinite; }
-@keyframes sparkleMove { 0%{transform:translateY(0) translateX(0) scale(1);opacity:0.8;}50%{opacity:0.5;}100%{transform:translateY(-120vh) translateX(var(--x-move,0px)) scale(0.5);opacity:0;} }
+@keyframes sparkleMove {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+  50% { opacity: 0.5; }
+  100% { transform: translateY(-120vh) translateX(var(--x-move, 0px)) scale(0.5); opacity: 0; }
+}
 
-/* Hero Section */
-.hero h1 { font-size:3rem; margin-bottom:10px; position:relative; z-index:2; text-align:center }
-.tagline { font-size:1.2rem; color:#530045; margin-bottom:20px; }
-.hero-button { display:inline-block; background:#f6d7f7; color:#C77DFF; padding:14px 24px; border-radius:12px; font-weight:600; margin-top:10px; transition:0.2s; }
-.hero-button:hover { background:#530045; cursor:pointer; transform: translateY(-2px); }
+.hero {
+  padding-top: 10px;
+}
 
+.hero-logo {
+  width: min(150px, 42vw);
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
+}
 
+.hero .feature {
+  max-width: 860px;
+  margin: 0 auto;
+}
 
-/* Bounce keyframes */
-@keyframes bounce { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+.tagline {
+  font-size: 1.15rem;
+  color: #4b2e83;
+  margin-bottom: 18px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* Crack keyframes */
-@keyframes crack { 0%{transform:rotate(0deg) scale(1);}25%{transform:rotate(-10deg) scale(1.05);}50%{transform:rotate(10deg) scale(0.95);}75%{transform:rotate(-5deg) scale(1.05);}100%{transform:rotate(0deg) scale(1);} }
+.waitlist-pill {
+  display: inline-block;
+  margin: 18px auto 10px;
+  padding: 10px 16px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #6f4aa2;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
 
-/* Sparkle burst */
-.burst { position:absolute; width:6px; height:6px; background:white; border-radius:50%; pointer-events:none; opacity:1; animation: burstAnim 1s forwards; }
-@keyframes burstAnim { 0%{opacity:1; transform:translate(0,0) scale(1);}100%{opacity:0; transform:translate(var(--x,0px),var(--y,0px)) scale(0.5);} }
+.hero-button {
+  display: inline-block;
+  background: #b48ae6;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-top: 12px;
+  transition: 0.2s;
+}
 
-/* Features */
-.features { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:50px;}
-.feature { background:#fbfbfc; transparent:50%; padding:20px; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,0.05); transition:0.3s; opacity: 0.7;}
-.feature:hover { transform: translateY(-5px); box-shadow:0 10px 25px rgba(0,0,0,0.08); }
-.feature h3 { margin-bottom:10px; font-size:1.2rem; }
-.feature p { font-size:0.95rem; color:#530045; }
+.hero-button:hover {
+  background: #8f63c9;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
 
-/* Screenshot Gallery (commented out) */
-.screenshot-section { margin-top:60px; }
-/*
-.screenshots { display:flex; overflow-x:auto; gap:20px; padding-bottom:10px; scroll-behavior: smooth; }
-.screenshots::-webkit-scrollbar { height:8px; }
-.screenshots::-webkit-scrollbar-thumb { background:#7b5cff; border-radius:4px; }
-.screenshots img { max-height:400px; border-radius:16px; box-shadow:0 8px 25px rgba(0,0,0,0.1); transition:0.3s; }
-.screenshots img:hover { transform: scale(1.05); }
-*/
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
 
-/* Founder Section */
-.founder { background:#fbfbfc; padding:40px 20px; border-radius:16px; margin-top:60px; opacity: 0.7; }
-.founder p { max-width:700px; margin:auto; color:#530045; font-size:1rem; line-height:1.6; }
+.benefit-chip {
+  background: rgba(255, 255, 255, 0.65);
+  color: #5d3f8f;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
 
-/* Contact Section */
-.contact { background:#fbfbfc; padding:40px 20px; border-radius:16px; margin-top:60px; opacity: 0.9; }
-.contact p { max-width:700px; margin:auto; color:#530045; font-size:1rem; line-height:1.6; }
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
 
-/* Form */
-form { margin-top:40px; display:flex; flex-direction:column; gap:12px; align-items:center; }
-input, textarea { padding:12px; width:100%; max-width:400px; border-radius:10px; border:1px solid #ccc; font-size:1rem; }
-input[type="submit"] { background:#f6d7f7; color:#C77DFF; font-weight:600; border:none; cursor:pointer; transition:0.2s; }
-input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
+.feature,
+.founder,
+.contact {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
 
-/* Footer */
-.footer { margin-top:60px; font-size:0.9rem; color:#530045; }
+.feature {
+  padding: 20px;
+  transition: 0.3s;
+}
 
-/* Responsive tweaks */
-@media(max-width:500px){
-  h1 { font-size:2.5rem; }
-  .features { grid-template-columns:1fr; }
-  /* .screenshots img { max-height:250px; } */
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.feature p,
+.founder p,
+.contact p {
+  color: #530045;
+}
+
+.founder,
+.contact {
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+.founder p,
+.contact p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-heading {
+  margin-bottom: 14px;
+}
+
+form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+input,
+textarea {
+  padding: 12px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+input[type="submit"] {
+  border: none;
+}
+
+.footer {
+  margin-top: 60px;
+  font-size: 0.9rem;
+  color: #530045;
 }
 
 .socialIcon a {
-  font-size: 2rem;           /* size of the icon */
-  margin: 0 10px;            /* spacing between icons */
-  transition: transform 0.2s, color 0.2s;  /* smooth hover */
+  font-size: 2rem;
+  margin: 0 10px;
+  transition: transform 0.2s, color 0.2s;
 }
 
 .socialIcon a:hover {
-  transform: scale(1.2);     /* grows slightly when hovered */
+  transform: scale(1.2);
 }
 
-.link {margin-top:10px; font-size:0.9rem;}
-.link:hover {transform: scale(1.2);}
+.link {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
 
+.link:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 500px) {
+  .tagline {
+    font-size: 1.05rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-logo {
+    width: min(135px, 46vw);
+  }
+
+  .benefit-chip {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.app-preview {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-preview img {
+  width: min(280px, 80vw);
+  border-radius: 28px;
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.15),
+    0 10px 25px rgba(0,0,0,0.08);
+  border: 6px solid rgba(255,255,255,0.7);
+}
+
+.app-preview img {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.comparison {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.comparison h2 {
+  margin-bottom: 24px;
+  color: #4b2e83;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.comparison-card {
+  padding: 24px;
+  border-radius: 16px;
+  text-align: left;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.comparison-card h3 {
+  margin-bottom: 12px;
+}
+
+.comparison-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.comparison-card li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+/* subtle color differences */
+.comparison-card.bad {
+  border-left: 4px solid #e6b8ff;
+}
+
+.comparison-card.good {
+  border-left: 4px solid #b48ae6;
+}
 </style>
 </head>
 
 <body>
 
+<div class="sparkles"></div>
+
 <div class="container">
-
-  <!-- Sparkles -->
-  <div class="sparkles"></div>
-
-  <!-- Hero -->
   <div class="hero">
-    <!-- <span class="egg">🐣</span> <h1>Hatchi</h1> -->
-	<img style="width: 30%; height:30%;" src="Hatchi Logo-chicken.PNG"/>
-    <p class="tagline">A cute and supportive fertility tracker for IVF and treatment journeys.</p>
-	<div class="feature">
-	
-		<p>Built by someone who understands the fertility journey.</p>
-		</br>
-    <p class="tagline">Hatchi is hatching soon!</p>
+    <img class="hero-logo" src="Hatchi Logo-chicken.PNG" alt="Hatchi logo with chick" />
 
-	<p>Early Hatchers will be the first to try Hatchi and help guide its development.</p>
-	</div>
+    <p class="tagline">A supportive fertility tracker for IVF, medications, blood results and cycle journeys.</p>
+
+    <div class="feature">
+      <p>Built by someone who understands the fertility journey.</p>
+      <br>
+      <p class="tagline">Hatchi is hatching soon!</p>
+      <p>Early Hatchers will be the first to try Hatchi and help guide its development.</p>
+    </div>
+    <a class="hero-button" href="https://eepurl.com/jBKmeM" target="_blank" rel="noopener noreferrer">Get Early Access 🐣</a>
+	<br>
+    <p class="waitlist-pill">💜 Help shape Hatchi from the very beginning</p>
+
+
+
+    <div class="benefits">
+      <div class="benefit-chip">✨ Be one of the first to try Hatchi</div>
+      <div class="benefit-chip">💜 Share feedback that shapes the app</div>
+      <div class="benefit-chip">📱 Hear when testing opens on Android</div>
+    </div>
 	
-    <a class="hero-button" href="http://eepurl.com/jBKmeM" target="_blank">Join the Early Hatchers 🐣</a>
+	<div class="app-preview">
+  <img src="screenshotDashboard.png" alt="Hatchi app preview showing IVF tracking dashboard" />
+</div>
+<div class="comparison">
+  <!-- <h2>Still using spreadsheets? 💻</h2> -->
+  
+  <div class="comparison-grid">
+ <!--    <div class="comparison-card bad">
+      <h3>❌ The Spreadsheet Life</h3>
+      <ul>
+        <li>Scrolling through endless rows</li>
+        <li>Easy to miss medications</li>
+        <li>Hard to see your full journey</li>
+        <li>Feels clinical and overwhelming</li>
+      </ul>
+    </div> -->
+
+    <div class="comparison-card good">
+      <h3>💜 With Hatchi</h3>
+      <ul>
+        <li>Everything in one simple view</li>
+        <li>Gentle medication reminders</li>
+        <li>Track cycles, results, and appointments</li>
+        <li>Designed to feel calm and supportive</li>
+      </ul>
+    </div>
+  </div>
+</div>
   </div>
 
-  <!-- Features -->
   <div class="features">
     <div class="feature">
       <h3>💊 Medication Reminders</h3>
@@ -172,84 +413,62 @@ input[type="submit"]:hover { background:#530045; transform: translateY(-2px); }
       <h3>🗓 Cycle Tracking</h3>
       <p>Keep your IVF or fertility journey organised.</p>
     </div>
-<!--     <div class="feature">
-      <h3>📝 Daily Logs</h3>
-      <p>Track symptoms, notes, and feelings each day.</p>
-    </div> -->
   </div>
 
-  <!-- Screenshot Gallery (commented out) -->
-  <!--
-  <div class="screenshot-section">
-    <h2>Sneak Peek 🐣</h2>
-    <div class="screenshots">
-      <img src="screenshot1.png" alt="Hatchi screenshot 1">
-      <img src="screenshot2.png" alt="Hatchi screenshot 2">
-      <img src="screenshot3.png" alt="Hatchi screenshot 3">
-    </div>
-    <p style="font-size:0.9rem; margin-top:10px;">Swipe → to see more screenshots</p>
-  </div>
-  -->
-
-  <!-- Founder Section -->
   <div class="founder">
-    <h2>About Hatchi 🐣</h2>
+    <h2 class="section-heading">About Hatchi 🐣</h2>
     <p>
-	I’m building Hatchi to make fertility treatment tracking simpler and more supportive.  
-	</br></br>
-	After going through many fertility treatments, I found myself living with a spreadsheet to track all my blood results, medications and appointments, I have not yet found an app that actually does what I want, so I thought, why not create it? While I'm making it for myself I feel others could truly benefit from Hatchi as well!
-	</br></br>
-    This app is being made with care for people going through IVF and fertility journeys, focusing on a cute, friendly, and stress-free experience.
-	</br></br>
-	I will be looking for testers soon once it's ready for the Google play store, so feel free to get in touch if you're interested.
-	</p>
+      I’m building Hatchi to make fertility treatment tracking simpler and more supportive.
+      <br><br>
+      After going through many fertility treatments, I found myself living with a spreadsheet to track all my blood results, medications and appointments. I have not yet found an app that actually does what I want, so I thought, why not create it? While I'm making it for myself I feel others could truly benefit from Hatchi as well!
+      <br><br>
+      This app is being made with care for people going through IVF and fertility journeys, focusing on a cute, friendly, and stress-free experience.
+      <br><br>
+      I will be looking for testers soon once it's ready for the Google Play Store, so feel free to get in touch if you're interested.
+    </p>
   </div>
-  </br>
 
-  <!-- Mailing List / Contact Form -->
   <div class="contact">
-  <h2>Get In Touch! 🐣</h2>
-  <p>Feel free to contact me with any questions or feedback, I will be looking for android testers soon!</p>
+    <h2 class="section-heading">Get In Touch! 🐣</h2>
+    <p>Feel free to contact me with any questions or feedback. I will be looking for Android testers soon!</p>
 
-  <form action="https://formspree.io/f/mgonlkqe" method="POST">
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Message" rows="3"></textarea>
-    <input class="hero-button" type="submit" value="Send Message"/>
-  </form>
-  </br>
-  <div class="socialIcon">
-<a target="_blank"href="https://www.instagram.com/hatchi.app" class="fab fa-instagram" ></a>
-<a target="_blank" href="https://www.tiktok.com/@hatchi.app" class="fab fa-tiktok"></a>
-<a target="_blank" href="mailto:willowlightapp@gmail.com" class="fa-regular fa-envelope"></a>
-</div>
+    <form action="https://formspree.io/f/mgonlkqe" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Message" rows="3"></textarea>
+      <input class="hero-button" type="submit" value="Send Message">
+    </form>
 
+    <br>
 
-  <p class="link">
-    Or <a class="link" href="http://eepurl.com/jBKmeM" target="_blank">join our mailing list</a>.
-  </p>
+    <div class="socialIcon">
+      <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hatchi.app" class="fab fa-instagram" aria-label="Instagram"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@hatchi.app" class="fab fa-tiktok" aria-label="TikTok"></a>
+      <a target="_blank" rel="noopener noreferrer" href="mailto:willowlightapp@gmail.com" class="fa-regular fa-envelope" aria-label="Email"></a>
+    </div>
+
+    <p class="link">
+      Or <a class="link" href="https://eepurl.com/jBKmeM" target="_blank" rel="noopener noreferrer">join the waitlist</a>.
+    </p>
   </div>
 
-  <!-- Footer -->
   <div class="footer">
     <p>Built with care by Willow Light</p>
     <p>Coming soon to Android</p>
   </div>
-
 </div>
 
-<!-- Sparkles JS -->
 <script>
-// Floating sparkles background
 const sparkleCount = 25;
 const container = document.querySelector('.sparkles');
-for(let i=0;i<sparkleCount;i++){
+
+for (let i = 0; i < sparkleCount; i++) {
   const s = document.createElement('div');
   s.classList.add('sparkle');
   s.style.left = Math.random() * 100 + 'vw';
   s.style.top = Math.random() * 100 + 'vh';
-  s.style.animationDuration = (5 + Math.random()*5) + 's';
-  s.style.animationDelay = Math.random()*5 + 's';
-  s.style.setProperty('--x-move', (Math.random()*40-20)+'px');
+  s.style.animationDuration = (5 + Math.random() * 5) + 's';
+  s.style.animationDelay = Math.random() * 5 + 's';
+  s.style.setProperty('--x-move', (Math.random() * 40 - 20) + 'px');
   container.appendChild(s);
 }
 </script>
