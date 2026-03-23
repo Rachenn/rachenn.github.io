@@ -3,10 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hatchi – Fertility Tracker for IVF & Treatment Journeys</title>
 
-<meta name="description" content="Hatchi is a cute and supportive fertility tracker designed for IVF and treatment journeys. Track medications, blood results and cycles in one place." />
-<meta name="keywords" content="fertility tracker, IVF tracker, fertility app, IVF medication tracker, fertility journey app" />
+<title>Hatchi – IVF & Fertility Tracker App</title>
+<meta
+  name="description"
+  content="Hatchi is a simple, supportive IVF and fertility tracker for medications, blood results, cycles, and appointments without spreadsheets."
+/>
+<link rel="canonical" href="https://hatchitracker.com/" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content="Hatchi – IVF & Fertility Tracker App" />
+<meta property="og:description" content="A simple, supportive fertility tracker for IVF, medications, blood results, and cycle journeys." />
+<meta property="og:url" content="https://hatchitracker.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://hatchitracker.com/screenshotDashboard.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hatchi – IVF & Fertility Tracker App" />
+<meta name="twitter:description" content="A simple, supportive fertility tracker for IVF, medications, blood results, and cycle journeys." />
+<meta name="twitter:image" content="https://hatchitracker.com/screenshotDashboard.png" />
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -155,7 +170,8 @@ a { text-decoration: none; color: inherit; }
 
 .feature,
 .founder,
-.contact {
+.contact,
+.seo-copy {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -173,25 +189,29 @@ a { text-decoration: none; color: inherit; }
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.feature h3 {
+.feature h3,
+.seo-copy h2 {
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
 
 .feature p,
 .founder p,
-.contact p {
+.contact p,
+.seo-copy p {
   color: #530045;
 }
 
 .founder,
-.contact {
+.contact,
+.seo-copy {
   padding: 40px 20px;
   margin-top: 60px;
 }
 
 .founder p,
-.contact p {
+.contact p,
+.seo-copy p {
   max-width: 700px;
   margin: auto;
   font-size: 1rem;
@@ -218,6 +238,7 @@ textarea {
   border-radius: 10px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  font-family: inherit;
 }
 
 input[type="submit"] {
@@ -277,13 +298,10 @@ input[type="submit"] {
 .app-preview img {
   width: min(280px, 80vw);
   border-radius: 28px;
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0,0,0,0.15),
     0 10px 25px rgba(0,0,0,0.08);
   border: 6px solid rgba(255,255,255,0.7);
-}
-
-.app-preview img {
   animation: float 4s ease-in-out infinite;
 }
 
@@ -331,11 +349,6 @@ input[type="submit"] {
   font-size: 0.95rem;
 }
 
-/* subtle color differences */
-.comparison-card.bad {
-  border-left: 4px solid #e6b8ff;
-}
-
 .comparison-card.good {
   border-left: 4px solid #b48ae6;
 }
@@ -358,47 +371,45 @@ input[type="submit"] {
       <p class="tagline">Hatchi is hatching soon!</p>
       <p>Early Hatchers will be the first to try Hatchi and help guide its development.</p>
     </div>
-    <a class="hero-button" href="https://eepurl.com/jBKmeM" target="_blank" rel="noopener noreferrer">Get Early Access 🐣</a>
-	<br>
+
+    <a class="hero-button" href="https://eepurl.com/jBKmeM" target="_blank" rel="noopener noreferrer" aria-label="Join the Hatchi early access waitlist">
+      Get Early Access 🐣
+    </a>
+    <br>
     <p class="waitlist-pill">💜 Help shape Hatchi from the very beginning</p>
-
-
 
     <div class="benefits">
       <div class="benefit-chip">✨ Be one of the first to try Hatchi</div>
       <div class="benefit-chip">💜 Share feedback that shapes the app</div>
       <div class="benefit-chip">📱 Hear when testing opens on Android</div>
     </div>
-	
-	<div class="app-preview">
-  <img src="screenshotDashboard.png" alt="Hatchi app preview showing IVF tracking dashboard" />
-</div>
-<div class="comparison">
-  <!-- <h2>Still using spreadsheets? 💻</h2> -->
-  
-  <div class="comparison-grid">
- <!--    <div class="comparison-card bad">
-      <h3>❌ The Spreadsheet Life</h3>
-      <ul>
-        <li>Scrolling through endless rows</li>
-        <li>Easy to miss medications</li>
-        <li>Hard to see your full journey</li>
-        <li>Feels clinical and overwhelming</li>
-      </ul>
-    </div> -->
 
-    <div class="comparison-card good">
-      <h3>💜 With Hatchi</h3>
-      <ul>
-        <li>Everything in one simple view</li>
-        <li>Gentle medication reminders</li>
-        <li>Track cycles, results, and appointments</li>
-        <li>Designed to feel calm and supportive</li>
-      </ul>
+    <div class="app-preview">
+      <img src="screenshotDashboard.png" alt="Hatchi app preview showing an IVF tracking dashboard" />
+    </div>
+
+    <div class="comparison">
+      <div class="comparison-grid">
+        <div class="comparison-card good">
+          <h3>💜 With Hatchi</h3>
+          <ul>
+            <li>Everything in one simple view</li>
+            <li>Gentle medication reminders</li>
+            <li>Track cycles, results, and appointments</li>
+            <li>Designed to feel calm and supportive</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-  </div>
+
+  <section class="seo-copy">
+    <h2>IVF & Fertility Tracking Made Simple</h2>
+    <p>
+      Hatchi is a fertility tracker designed for IVF and treatment journeys. Track medications, blood results,
+      cycles, and appointments in one place without spreadsheets.
+    </p>
+  </section>
 
   <div class="features">
     <div class="feature">
@@ -418,19 +429,19 @@ input[type="submit"] {
   <div class="founder">
     <h2 class="section-heading">About Hatchi 🐣</h2>
     <p>
-      I’m building Hatchi to make fertility treatment tracking simpler and more supportive.
+      I’m building Hatchi to make fertility treatment tracking feel simpler, calmer, and more supportive.
       <br><br>
-      After going through many fertility treatments, I found myself living with a spreadsheet to track all my blood results, medications and appointments. I have not yet found an app that actually does what I want, so I thought, why not create it? While I'm making it for myself I feel others could truly benefit from Hatchi as well!
+      After going through fertility treatment myself, I found myself relying on a spreadsheet to keep track of blood results, medications, and appointments. I still could not find an app that did everything I wanted in one place, so I decided to create it.
       <br><br>
-      This app is being made with care for people going through IVF and fertility journeys, focusing on a cute, friendly, and stress-free experience.
+      Hatchi is being made with care for people going through IVF and fertility journeys, with a focus on feeling cute, friendly, and stress-free when things already feel overwhelming.
       <br><br>
-      I will be looking for testers soon once it's ready for the Google Play Store, so feel free to get in touch if you're interested.
+      I’ll be looking for testers soon once it’s ready for the Google Play Store, so feel free to get in touch if you’d like to be part of it.
     </p>
   </div>
 
   <div class="contact">
     <h2 class="section-heading">Get In Touch! 🐣</h2>
-    <p>Feel free to contact me with any questions or feedback. I will be looking for Android testers soon!</p>
+    <p>Feel free to contact me with any questions or feedback. I’ll be looking for Android testers soon.</p>
 
     <form action="https://formspree.io/f/mgonlkqe" method="POST">
       <input type="email" name="email" placeholder="Your email" required>
@@ -441,7 +452,10 @@ input[type="submit"] {
     <br>
 
     <div class="socialIcon">
+      <p style="color: #666;">Follow along as I build Hatchi 💜</p>
+
       <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hatchi.app" class="fab fa-instagram" aria-label="Instagram"></a>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/hatchitracker/" class="fab fa-facebook-f" aria-label="Facebook"></a>
       <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@hatchi.app" class="fab fa-tiktok" aria-label="TikTok"></a>
       <a target="_blank" rel="noopener noreferrer" href="mailto:willowlightapp@gmail.com" class="fa-regular fa-envelope" aria-label="Email"></a>
     </div>
