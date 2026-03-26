@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IVF Tracker App - Hatchi</title>
+<meta
+  name="description"
+  content="Looking for an IVF tracker app? Hatchi helps you track medications, blood results, appointments and cycle timelines in one calm, supportive place."
+/>
+<link rel="canonical" href="https://hatchitracker.com/ivf-tracker-app.html" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content="IVF Tracker App - Hatchi" />
+<meta property="og:description" content="Track medications, blood results, appointments, and cycle timelines in one calm, supportive IVF tracker app." />
+<meta property="og:url" content="https://hatchitracker.com/ivf-tracker-app.html" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://hatchitracker.com/og_image.png" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="IVF Tracker App - Hatchi" />
+<meta name="twitter:description" content="Track medications, blood results, appointments, and cycle timelines in one calm, supportive IVF tracker app." />
+<meta name="twitter:image" content="https://hatchitracker.com/og_image.png" />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<div class="sparkles"></div>
+
+<div class="container">
+  <div class="hero">
+    <h1 class="page-title">IVF Tracker App</h1>
+
+    <p class="tagline">
+      A calm, supportive way to track medications, blood results, appointments, and cycle timelines during fertility treatment.
+    </p>
+  </div>
+
+  <section class="page-section">
+    <h2>What is an IVF tracker app?</h2>
+    <p>
+      An IVF tracker app helps you keep important treatment information in one place.
+      Instead of relying on notes apps, spreadsheets, and memory, you can track medications, appointments,
+      blood results, and key milestones in a way that feels organised and easier to manage.
+    </p>
+  </section>
+
+  <section class="page-section">
+    <h2>What Hatchi helps you track</h2>
+    <ul>
+      <li>💊 IVF medications and reminders</li>
+      <li>📊 Blood test results in one place</li>
+      <li>🗓 Cycle timelines and appointments</li>
+      <li>🐣 Important milestones during treatment</li>
+    </ul>
+  </section>
+
+  <section class="page-section">
+    <h2>A gentler way to stay organised</h2>
+    <p>
+      Fertility treatment can already feel overwhelming. Hatchi is designed to replace spreadsheets
+      with something that feels simple, calm, and supportive.
+    </p>
+    <br>
+    <p>
+      Whether you are preparing for IVF, in the middle of a cycle, or managing an FET,
+      Hatchi helps keep everything together in one place.
+    </p>
+  </section>
+
+  <section class="page-section">
+    <h2>Join the waitlist</h2>
+    <p>
+      Hatchi is hatching soon. Join the waitlist to hear when early access and Android testing opens.
+    </p>
+    <a class="hero-button" href="https://eepurl.com/jBKmeM" target="_blank" rel="noopener noreferrer">
+      Get Early Access 🐣
+    </a>
+
+    <div class="page-nav">
+      <p><a href="../">← Back to Hatchi home</a></p>
+      <p><a href="../two-week-wait-tracker/">Read: Two Week Wait Tracker Guide</a></p>
+    </div>
+  </section>
+
+  <div class="footer">
+    <p>Built with care by Rachel</p>
+    <p>Coming soon to Android</p>
+  </div>
+</div>
+
+<script>
+const sparkleCount = 25;
+const container = document.querySelector('.sparkles');
+
+for (let i = 0; i < sparkleCount; i++) {
+  const s = document.createElement('div');
+  s.classList.add('sparkle');
+  s.style.left = Math.random() * 100 + 'vw';
+  s.style.top = Math.random() * 100 + 'vh';
+  s.style.animationDuration = (5 + Math.random() * 5) + 's';
+  s.style.animationDelay = Math.random() * 5 + 's';
+  s.style.setProperty('--x-move', (Math.random() * 40 - 20) + 'px');
+  container.appendChild(s);
+}
+</script>
+
+</body>
+</html>
