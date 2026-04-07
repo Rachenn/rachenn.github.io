@@ -1,57 +1,273 @@
-# Privacy Policy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Hatchi</title>
+  <meta
+    name="description"
+    content="Read the Hatchi Privacy Policy to understand how your information is collected, stored, and used."
+  />
+  <style>
+    :root {
+      --bg: #f7f4fa;
+      --bg-soft: linear-gradient(to right, #e9ddf7, #c5a8e6);
+      --card: #ffffff;
+      --text: #530045;
+      --text-soft: #6f5a73;
+      --accent: #c77dff;
+      --accent-dark: #a855f7;
+      --border: #eadff2;
+      --shadow: 0 10px 30px rgba(83, 0, 69, 0.08);
+    }
 
-**Last updated:** March 2026
+    * {
+      box-sizing: border-box;
+    }
 
-Hatchi ("we", "our", or "us") is committed to protecting your privacy.
+    html {
+      scroll-behavior: smooth;
+    }
 
-## Information We Collect
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-We may collect and store the following information:
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
 
-* Account information (such as email address)
-* Fertility and health-related data you choose to enter (e.g. cycles, medications, blood results, appointments)
-* App usage data (for improving the app experience)
+    a:hover {
+      text-decoration: underline;
+    }
 
-## How We Use Your Information
+    .hero {
+      background: var(--bg-soft);
+      padding: 64px 20px 44px;
+      text-align: center;
+    }
 
-We use your information to:
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
 
-* Provide and maintain the Hatchi app
-* Display your personal data within the app
-* Improve features and user experience
-* Send optional reminders and notifications
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
 
-## Data Storage
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.15;
+    }
 
-Your data is securely stored using Firebase services provided by Google.
+    .hero p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+    }
 
-## Data Sharing
+    .page {
+      max-width: 860px;
+      margin: -24px auto 0;
+      padding: 0 20px 64px;
+    }
 
-We do **not sell or share your personal data** with third parties, except:
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 32px 24px;
+    }
 
-* As required by law
-* To provide core app functionality (e.g. Firebase services)
+    @media (min-width: 768px) {
+      .card {
+        padding: 44px 48px;
+      }
+    }
 
-## Data Security
+    h2 {
+      font-size: 1.35rem;
+      margin-top: 34px;
+      margin-bottom: 10px;
+    }
 
-We take reasonable steps to protect your data, but no method of transmission over the internet is 100% secure.
+    h2:first-of-type {
+      margin-top: 0;
+    }
 
-## Your Rights
+    p {
+      margin: 0 0 16px;
+    }
 
-You can:
+    ul {
+      margin: 0 0 18px 0;
+      padding-left: 22px;
+    }
 
-* Access or update your data within the app
-* Request deletion of your account and data
+    li {
+      margin-bottom: 8px;
+    }
 
-## Children's Privacy
+    .updated {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 10px 14px;
+      background: #faf7fd;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
 
-Hatchi is not intended for children under 13.
+    .note {
+      margin: 24px 0;
+      padding: 18px 18px;
+      background: #faf7fd;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
 
-## Changes to This Policy
+    .back-link {
+      display: inline-block;
+      margin-top: 28px;
+      font-weight: 600;
+    }
 
-We may update this policy from time to time.
+    footer {
+      text-align: center;
+      padding: 10px 20px 56px;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Hatchi Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>
+        Hatchi is built to feel calm, supportive, and simple. This page explains
+        what information we collect, how we use it, and how we protect it.
+      </p>
+    </div>
+  </header>
 
-## Contact Us
+  <main class="page">
+    <section class="card">
+      <div class="updated"><strong>Last updated:</strong> March 2026</div>
 
-If you have any questions, please contact:
-[hello@hatchitracker.com](mailto:hello@hatchitracker.com)
+      <p>
+        Hatchi (“we”, “our”, or “us”) is committed to protecting your privacy
+        and handling your data with care and transparency.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>We may collect and store the following information:</p>
+      <ul>
+        <li><strong>Account information</strong>, such as your email address</li>
+        <li>
+          <strong>Fertility and health-related data</strong> you choose to enter,
+          such as cycles, medications, blood results, and appointments
+        </li>
+        <li>
+          <strong>App usage data</strong> to help us improve the app experience
+        </li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <p>We use your information to:</p>
+      <ul>
+        <li>Provide and maintain the Hatchi app</li>
+        <li>Display your personal data within the app</li>
+        <li>Improve features and user experience</li>
+        <li>Send optional reminders and notifications you choose to enable</li>
+      </ul>
+
+      <h2>Data Storage</h2>
+      <p>
+        Your data is securely stored using Firebase services provided by Google.
+      </p>
+      <p>
+        Data may be stored on servers located outside your country, including in
+        the United States.
+      </p>
+
+      <h2>Data Sharing</h2>
+      <p>We do <strong>not</strong> sell your personal data.</p>
+      <p>We only share data in the following limited circumstances:</p>
+      <ul>
+        <li>
+          With trusted service providers, such as Firebase, required to operate
+          the app
+        </li>
+        <li>If required by law or legal process</li>
+      </ul>
+
+      <h2>Data Security</h2>
+      <p>
+        We take reasonable steps to protect your data. However, no method of
+        transmission over the internet or electronic storage is completely secure.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>You can:</p>
+      <ul>
+        <li>Access and update your data within the app</li>
+        <li>Request deletion of your account and associated data</li>
+      </ul>
+      <p>
+        To request deletion, please contact us at
+        <a href="mailto:hello@hatchitracker.com">hello@hatchitracker.com</a>.
+      </p>
+
+      <div class="note">
+        <strong>Health Disclaimer</strong><br />
+        Hatchi is a tracking and support tool only and does not provide medical
+        advice. You should always follow the guidance of your healthcare provider
+        or fertility clinic regarding treatment, medications, and medical decisions.
+      </div>
+
+      <h2>Children’s Privacy</h2>
+      <p>
+        Hatchi is not intended for children under the age of 13, and we do not
+        knowingly collect personal information from children.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Updates will be posted
+        on this page with a revised “Last updated” date.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please contact:
+      </p>
+      <p>
+        <a href="mailto:hello@hatchitracker.com">hello@hatchitracker.com</a>
+      </p>
+
+      <a class="back-link" href="/">← Back to Hatchi home</a>
+    </section>
+  </main>
+
+  <footer>
+    Built with care by Rachel<br />
+    Coming soon to Android
+  </footer>
+</body>
+</html>
